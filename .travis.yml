@@ -1,0 +1,12 @@
+language: go
+sudo: false
+go:
+- tip
+before_install:
+- go get github.com/mattn/goveralls
+- go get golang.org/x/tools/cmd/cover
+script:
+- $HOME/gopath/bin/goveralls -service=travis-pro
+env:
+  global:
+    secure: Nnc9VZEoi4MxmCK9fcf56bp0LfofB0txk52OF8QJUHO7auxHJNgecWcNiF7okDn3wA+5qrWKQOjxUugngo7SY/QD7u37bxIsEa7Oiq+0tmukNBPi62YHJogL8Hk00SXtAHB2Db03/GrKU6E4Q3/tAW3/ZmuExbjLVAiptxeLrO/qJTo7l2zdaav489hX5CgVx7YwQbi2TKSCwX71NcZJK362nJTCt/fjFXwTM9unhRhex7LjsAGwUKZxtaCPCT0frPflDm8Qeoq5q1M7xFClxd/sOcJ6i4jk+5AO40orYG1Hbj2lycx4SYtVoPr/56kG5oSgKW90X9V0k1Mz0mA4ymIKJSxE0osG6eYgPzTmoBfZ2DcKomfxMG1oRV3u9O9yMYUdJ4uIdRTstib/Qkj/iHLTbG/QM1MGC+IvCvS50lTlZPS0pnC3jdWe99R+rx9dMF59+V92fNWUb2Lnl88zBklh17QBU5sk6NPtZkKF1wkjdBE1DC07KHTHVWqmXCkbXG7NxjpI/F+ZHtMXeRUnjaB2s6PwNoa+0RAwAbaIafL57x6fTubPUsZ9C7k1cPp8G/ZZJZrM5bJ8xhFHJZMdwjONnarN+vHz6pGJifwbVzCa13TxnZOm9nrC4ycBSAyaAazS+5jFiGBcqq7Cd6BQY+9R42X4QHFphQ3i8t+zz8E=
