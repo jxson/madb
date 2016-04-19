@@ -3,6 +3,8 @@ sudo: false
 go:
 - tip
 before_install:
+- sudo apt-get -qq update
+- sudo apt-get install android-sdk android-tools-adb
 - go get github.com/mattn/goveralls
 - go get golang.org/x/tools/cmd/cover
 script:
