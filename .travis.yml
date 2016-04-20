@@ -9,8 +9,10 @@ before_install:
 - sudo apt-get install android-tools-adb
 - go get github.com/mattn/goveralls
 - go get golang.org/x/tools/cmd/cover
+script:
+- go test -v -coverprofile=profile.cov
 after_script:
-- $HOME/gopath/bin/goveralls -service=travis-pro
+- $HOME/gopath/bin/goveralls -coverprofile=profile.cov -service=travis-ci
 env:
   global:
   - secure: NZQXXfl/jNNn+nE8CJQ4obSoY4PCy6iIkYfuJt2bqjNhMVvS5YPap+i1xxWqH412aUOAJfosjhFIarDYAfUiDOsuj16nQvKIqUHdwsEABqb+fBWsHaJSv4rZBzVFuixIQQkf9KQB9F5Hy3DI6SZCQbdHvwTaLcBJQzWYDPD0UTpABqVYNVRwd4NzitQCYHqzH6h1zpMVHmmal3pY98adTnXD/l9Zc5ZQiBWmUCpRdIw6tHj5EHmOa40fjabNk2VfbzAT2dUIsqlLjn4alYN796Hsfcz6Od17DwvUd2mj5ajOHoTnquQoOa8INVHbYW+7MPkpRM24L5MG7q9fU2GhGT+5dj7TQgg9XlafvLOuGZZ7GRX9ADd9lROKoWy+8xDTNcLDelYY94rd2f6F+uEnaJiuPMTT0dB3t++R5cEZZVfkbmcaiMrv+qSrXcTun1d/t/psvIo/zQlu6HJAH1JFQ2sL0kgPZwnLv6jJjorGCyLr030cXvYsZaSGrndbPxOVpF1SqRWf+K5cOmJNE2GWEO2G6fD0NpXnoKv96amosLv0q2OwPWDfG2mE7uXBP+qwVBb1HTMskCWdaWzhrAQ4jNeyubf6YidQP+gAhdVdiJa2My6yWgwPlpm+nX2vYoUVIoRLSWdSR/jvu6DzwF3HOvmIsbCiMh8eqG5HMb5w06A=
